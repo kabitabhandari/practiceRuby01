@@ -1,11 +1,18 @@
-<h1> portfolios posts</h1>
-<%= @portfolios.inspect %>
-</br>
-<% @portfolios. each do|portfolio_item| %>
-    <p><%= portfolio_item.title %> </p>
+<h1> portfolio posts</h1>
+<a href = "/portfolios/new" > html style create</a></br>
+<%= link_to "Create new item via path", new_portfolio_path %></br>
+<%= link_to "Create new item via url ", new_portfolio_url %></br>
+<%= new_portfolio_path %>
+<%= new_portfolio_url %>
+
+<% @portfolio_items. each do|portfolio_item| %>
+    <p><%= link_to portfolio_item.title ,portfolio_path(portfolio_item.id)%> </p> <%# you can remove .id from (portfolio_item.id) it works same %>
     <p><%= portfolio_item.subtitle %></p>
     <p><%= portfolio_item.body %></p>
-    <p><%= portfolio_item.thumb_image %></p>
-      <p><%= image_tag portfolio_item.thumb_image %></p>
-
+    <%#= portfolio_item.thumb_image  image cant do this way$%>
+    <p><%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %></p>
+    <%= link_to "edit me", edit_portfolio_path(portfolio_item.id) %>
+    <a href="/portfolios/<%= portfolio_item.id %>/edit">html style edit</a>
+    <%= link_to 'Destroy', portfolio_path(portfolio_item), method: :delete, data: { confirm: 'Are you sure?' } %>
 <%end%>
+<p> all database items are <%= @portfolio_items.inspect %></p>
