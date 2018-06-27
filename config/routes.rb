@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   get 'about-me', to: 'pages#about' #can put any name in lhs about, about-me etc
   #get 'pages/contact'
   get 'contact', to: 'pages#contact'
-  resources :blogs
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
+
   root to: 'pages#home' #in localhost home page is shown
 
 end
