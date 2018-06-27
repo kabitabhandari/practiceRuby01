@@ -6,7 +6,7 @@
 <%= new_portfolio_url %>
 
 <% @portfolio_items. each do|portfolio_item| %>
-    <p><%= link_to portfolio_item.title ,portfolio_path(portfolio_item.id)%> </p> <%# you can remove .id from (portfolio_item.id) it works same %>
+    <p><%= link_to portfolio_item.title ,portfolio_show_path(portfolio_item.id)%> </p> <%# you can remove .id from (portfolio_item.id) it works same %>
     <p><%= portfolio_item.subtitle %></p>
     <p><%= portfolio_item.body %></p>
     <%#= portfolio_item.thumb_image  image cant do this way$%>
