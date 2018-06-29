@@ -1,16 +1,23 @@
  class PortfoliosController < ApplicationController
    def index
+     #@portfolio_items= Portfolio.ang
      @portfolio_items= Portfolio.all
+   end
+   def displayangular
+     @portfolio_items_for_angular= Portfolio.ang
    end
 
 
    def new
      @portfolio_item = Portfolio.new
+     #in the form for portfolio I wanna take items for technologgies as well.
+     3.times{ @portfolio_item.technologies.build}
    end
 
 
    def create
      @portfolio_item = Portfolio.new(portfolio_params)
+
      respond_to do |format|
        if @portfolio_item.save
          format.html { redirect_to portfolios_path , notice: 'portfolio was successfully created.' }
@@ -56,6 +63,6 @@
 
      private
       def portfolio_params
-       params.require(:portfolio).permit(:title,:subtitle,:body)
+       params.require(:portfolio).permit(:title,:subtitle,:body,technologies_attributes: [:name])
      end
 end
