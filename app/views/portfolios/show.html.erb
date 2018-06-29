@@ -5,3 +5,8 @@
 <p> <%= @portfolio_item.body %></p>
 <p> <%= @portfolio_item.main_image %></p>
 <p><%= image_tag @portfolio_item.main_image%></p>
+
+<h2> Technologies USed are:</h2>
+<% @portfolio_item.technologies.each do|t| %> <%#@portfolio_item is taking id ie similar to Portfolio.last.technologies %>
+<p> <%= t.name %></p>
+<%end%>
