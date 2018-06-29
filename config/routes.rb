@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :portfolios, except: [:show]
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show' #mapping rhs with lhs
+  get 'portfolios/angular', to: 'portfolios#displayangular' # localhost/portfolio/angular
+  #get 'angular', to: 'portfolios#displayangular' #localhost/angular
+  #get 'portfolios/angular', to: 'portfolios#displayangular' # localhost/portfolios/angular
 
 
   #get 'pages/about'
