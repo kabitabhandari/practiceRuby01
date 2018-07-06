@@ -1,5 +1,6 @@
-<h3> Show Page is as below: </h3>
-<p><h5> shows database with the current id</h5><%= @portfolio_item.inspect %></p>
+<h3> <%= link_to "Show Page", portfolio_show_path %>is as below: </h3>
+<h6> showing database with, current id = <%= @portfolio_item.id%></h6>
+  <div> How is  info stored in my database==========><%= @portfolio_item.inspect %><//div>
 <h1> <%= @portfolio_item.title %></h1>
 <em> <%= @portfolio_item.subtitle %></em>
 <p> <%= @portfolio_item.body %></p>
@@ -10,3 +11,15 @@
 <% @portfolio_item.technologies.each do|t| %> <%#@portfolio_item is taking id ie similar to Portfolio.last.technologies %>
 <p> <%= t.name %></p>
 <%end%>
+<p>Displaying params.inspect ===><%= params.inspect %>
+  <p> All sets of params ===>
+  <%=(params[:controller])  %>
+  <%=(params[:action])  %>
+  <%=(params[:id])  %> </p>
+
+
+<p> The result of @portfolio_item ===><%= @portfolio_item%> </p>
+<p> The result of @portfolio_item.id===> <%= @portfolio_item.id%> </p>
+<p> The result of @portfolio_item.title===> <%= @portfolio_item.title%> </p>
+<p> The result of @portfolio_item.subtitle===> <%= @portfolio_item.subtitle%> </p>
+<p> The result of @portfolio_item.inspect===> <%= @portfolio_item.inspect%> </p>
