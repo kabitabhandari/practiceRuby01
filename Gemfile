@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'friendly_id'
-
+gem 'devise', '~> 4.4', '>= 4.4.3'
 
 
 
