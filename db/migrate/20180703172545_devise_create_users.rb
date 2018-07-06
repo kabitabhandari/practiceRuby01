@@ -10,7 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ##custom fields by ME
       t.string :first_name
       t.string :last_name
-      t.integer :phone_number
+      t.string :phone_number
 
       ## Recoverable
       t.string   :reset_password_token
