@@ -11,15 +11,19 @@
 <% @portfolio_item.technologies.each do|t| %> <%#@portfolio_item is taking id ie similar to Portfolio.last.technologies %>
 <p> <%= t.name %></p>
 <%end%>
+<hr>
 <p>Displaying params.inspect ===><%= params.inspect %>
   <p> All sets of params ===>
   <%=(params[:controller])  %>
   <%=(params[:action])  %>
   <%=(params[:id])  %> </p>
 
-
 <p> The result of @portfolio_item ===><%= @portfolio_item%> </p>
 <p> The result of @portfolio_item.id===> <%= @portfolio_item.id%> </p>
 <p> The result of @portfolio_item.title===> <%= @portfolio_item.title%> </p>
 <p> The result of @portfolio_item.subtitle===> <%= @portfolio_item.subtitle%> </p>
 <p> The result of @portfolio_item.inspect===> <%= @portfolio_item.inspect%> </p>
+<hr>
+<%# session.inspect%>
+<%=   params.inspect %>
+<hr>
