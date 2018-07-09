@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -13,7 +13,6 @@
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 
-        <%= render "shared/nav" , location: 'top'%> <%# no need to write shared/_nav %>
        <%if current_user%>
        <%= link_to "logout", destroy_user_session_path, method: :delete%>
        <%else %>  <%# if no user %>
@@ -21,6 +20,7 @@
        <%= link_to "login", new_user_session_path%>
        <%end%>
     <%= yield %>
+      <%= render "shared/nav", location: 'bottom'%>
     <% if session[:mero_session] %>
     Thankyou for visiting me from: <%= session[:mero_session] %>
     <%end%>

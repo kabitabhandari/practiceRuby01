@@ -1,10 +1,13 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  layout  "blog" #layout is an method and blog is argument to that method
+  #in the layout directory find the file blog and map it with that
 
   # GET /blogs
   # GET /blogs.json
   def index
     @blogs = Blog.all
+    @page_title = "My Portfolio Blog"
   end
 
   # GET /blogs/1
