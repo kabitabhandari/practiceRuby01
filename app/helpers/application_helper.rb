@@ -6,7 +6,7 @@ module ApplicationHelper
       (link_to "register", new_user_registration_path) +
       "<br>".html_safe +
      (link_to "log-in", new_user_session_path)
-    end
+   end
   end
 
 end
