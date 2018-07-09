@@ -13,7 +13,7 @@
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 
-        <%= render "shared/nav" %> <%# no need to write shared/_nav %>
+        <%= render "shared/nav" , location: 'top'%> <%# no need to write shared/_nav %>
        <%if current_user%>
        <%= link_to "logout", destroy_user_session_path, method: :delete%>
        <%else %>  <%# if no user %>
