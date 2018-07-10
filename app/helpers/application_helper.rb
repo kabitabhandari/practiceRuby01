@@ -8,5 +8,12 @@ module ApplicationHelper
      (link_to "log-in", new_user_session_path)
    end
   end
+  def source_helper # login from fb, twitter
+    if session[:mero_session]
+    greeting ="Thankyou for visiting me from: #{session[:mero_session]}"
+    content_tag(:p,greeting,class: "source-greeting")
+    end
+  end
+
 
 end

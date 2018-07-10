@@ -20,10 +20,11 @@
        <%= link_to "register", new_user_registration_path%>
        <%= link_to "login", new_user_session_path%>
        <%end%> -->
-       <%= login_helper%> 
+       <%= login_helper%>
     <%= yield %>
-    <% if session[:mero_session] %>
+    <!--<% if session[:mero_session] %>
     Thankyou for visiting me from: <%= session[:mero_session] %>
-    <%end%>
+    <%end%> -->
+    <%= source_helper %>
   </body>
 </html>
