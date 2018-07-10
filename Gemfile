@@ -3,11 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'friendly_id'
 gem 'devise', '~> 4.4', '>= 4.4.3'
-
-
-
-
-
+gem 'bootstrap', '~> 4.1.1'
 
 
 ruby '2.5.1'
