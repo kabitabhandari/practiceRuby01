@@ -13,16 +13,17 @@
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 
-       <%if current_user%>
+      <!-- <%if current_user%>
        <%= link_to "logout", destroy_user_session_path, method: :delete%>
        <%else %>  <%# if no user %>
        <%= link_to "register", new_user_registration_path%>
        <%= link_to "login", new_user_session_path%>
-       <%end%>
+       <%end%> -->
+       <%= login_helper %>
     <%= yield %>
-      <%= render "shared/nav", location: 'bottom'%>
-    <% if session[:mero_session] %>
+    <!--<% if session[:mero_session] %>
     Thankyou for visiting me from: <%= session[:mero_session] %>
-    <%end%>
+    <%end%> -->
+    <%= source_helper %>
   </body>
 </html>
